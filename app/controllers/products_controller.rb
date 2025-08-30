@@ -47,6 +47,6 @@ class ProductsController < ApplicationController
 
   # this sanitizes the url input and makes sure we only have the relevant keys
   def product_params
-    params.expect(product: [ :name, :description, :featured_image ])
+    params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
   end
 end
