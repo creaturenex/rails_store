@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-linear-to-br from-[#a5fecb] via-[#20bdff] to-[#5433ff]">
   <head>
     <title><%= content_for(:title) || "Rails Store" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -27,12 +27,13 @@
 
   </head>
 
-  <body>
+  <body class="min-h-screen">
     
     <div class="notice"><%= notice %></div>
-    <nav>
+    <nav class="h-14 px-4 flex justify-between items-center bg-white/90 rounded-xl text-[#252525] font-bold">
       <%= link_to "Home", root_path %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+      INTERTIDAL CORALS
+      <%= button_to "Log out", session_path, class: "button", method: :delete if authenticated? %>
     </nav>
 
     <main>
