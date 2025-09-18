@@ -39,3 +39,15 @@ plugin :solid_queue if ENV["SOLID_QUEUE_IN_PUMA"]
 # Specify the PID file. Defaults to tmp/pids/server.pid in development.
 # In other environments, only set the PID file if requested.
 pidfile ENV["PIDFILE"] if ENV["PIDFILE"]
+
+# config/puma.rb - add at the bottom
+
+# Force Puma to show HTTP URLs instead of TCP
+bind "http://0.0.0.0:#{ENV.fetch('PORT', 3000)}"
+
+# Optional: Add a custom message after boot
+if Rails.env.development?
+  on_booted do
+    puts "📱 Rails app ready: http://localhost:#{ENV.fetch('PORT', 3000)}"
+  end
+end
